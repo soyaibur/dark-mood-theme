@@ -1,9 +1,6 @@
 *, *::after, *::before{
     box-sizing: border-box;
 }
-.icons{
-    width: 20px;
-}
 
 body{
  --icon-color:#ff8800;
@@ -14,14 +11,13 @@ body{
 
 
 
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height:100vh;
-
 }
+
 body.dark{
 --icon-color: #dad863;
 --background-color: #333;
@@ -29,4 +25,40 @@ body.dark{
 --button-background-color: var(--icon-color);
 --button-text-color: var(--background-color);
 
+background-color: var(--background-color);
+color:var(--title-color);
+}
+.sun-moon-icon{
+    margin-right: 1rem;
+}
+.icons{
+    width: 50px;
+    stroke: var(--background-color);
+}
+
+.title{
+    font-size: 2em;
+}
+
+
+
+.btn-theme-toggle{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.5rem;
+    padding:.5rem 1rem;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+    transition: transform 1s ease-in-out;
+    transform:scale(1);
+    cursor: pointer;
+
+    color:var(--button-text-color);
+    background-color: var(--button-background-color);
+}
+.btn-theme-toggle:hover,
+.btn-theme-toggle:focus{
+    transform: scale(1.1);
 }

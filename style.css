@@ -1,3 +1,7 @@
 *, *::after, *::before{
     box-sizing: border-box;
 }
+.icons{
+    height: 20px;
+    width: 20px;
+}

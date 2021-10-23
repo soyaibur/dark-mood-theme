@@ -67,23 +67,19 @@ color:var(--title-color);
 }
 
 .sun-moon-container{
-    --rotation: rotate(0deg);
+    --rotation: 0;
     position:absolute;
+    display: flex;
+    justify-content: center;
     height: 200vmin;
     width: 100vw;
-    transition:rotate, 2s;
     pointer-events: none;
-
-    transform: var(--rotation);
-    
-}
-.dark .sun-moon-container{
-    --rotation: rotate(180deg);  
+    transition:rotate, 2s;
+    transform:rotate(calc(var(--rotation) * 1deg));
 }
 .sun-icon{
     position:absolute;
     top: 25%;
-    right:10%;
     height:150px;
     width:150px;
     fill:var(--button-background-color);
@@ -94,7 +90,6 @@ color:var(--title-color);
 .moon-icon{
    position:absolute;
    bottom:25%;
-   right: 10%;
    fill:var(--button-background-color);
    height:100px;
    width:100px;

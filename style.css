@@ -19,6 +19,7 @@ body{
     height:100vh;
     transition: 1000ms ease-out;
     margin:0;
+    overflow: hidden;
 }
 
 body.dark{

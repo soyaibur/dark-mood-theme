@@ -4,10 +4,11 @@
 
 body{
  --icon-color:#ff8800;
- --background-color: white;
+ --background-color: #e4e2e2;
  --title-color: #333;
  --button-background-color:var(--icon-color);
  --button-text-color:white;
+ 
 
 
 
@@ -16,6 +17,8 @@ body{
     justify-content: center;
     align-items: center;
     height:100vh;
+    transition: 1000ms ease-out;
+    margin:0;
 }
 
 body.dark{
@@ -47,18 +50,60 @@ color:var(--title-color);
     justify-content:center;
     align-items:center;
     font-size:1.5rem;
-    padding:.5rem 1rem;
+    padding:.4rem .5rem;
     border:none;
     outline: none;
     border-radius: 5px;
-    transition: transform 1s ease-in-out;
-    transform:scale(1);
+    transition: transform,color, 500ms ease-in-out;
+    transform:scale(.9);
     cursor: pointer;
 
     color:var(--button-text-color);
     background-color: var(--button-background-color);
 }
-.btn-theme-toggle:hover,
-.btn-theme-toggle:focus{
+.btn-theme-toggle:hover{
     transform: scale(1.1);
+}
+
+.sun-moon-container{
+    --rotation: rotate(0deg);
+    position:absolute;
+    height: 200vmin;
+    width: 100vw;
+    transition:rotate, 2s;
+    pointer-events: none;
+
+    transform: var(--rotation);
+    
+}
+.dark .sun-moon-container{
+    --rotation: rotate(180deg);  
+}
+.sun-icon{
+    position:absolute;
+    top: 25%;
+    right:10%;
+    height:150px;
+    width:150px;
+    fill:var(--button-background-color);
+    stroke: var(--button-background-color);
+    transition: opacity 2s;
+}
+
+.moon-icon{
+   position:absolute;
+   bottom:25%;
+   right: 10%;
+   fill:var(--button-background-color);
+   height:100px;
+   width:100px;
+   transform:rotate(180deg);
+   transition: 2s;
+   opacity: 0;
+}
+.dark .moon-icon{
+    opacity: 1;
+}
+.dark .sun-icon{
+    opacity: 0;
 }
